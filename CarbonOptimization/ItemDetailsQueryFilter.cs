@@ -1,9 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarbonOptimization
 {
@@ -101,17 +96,15 @@ namespace CarbonOptimization
 
         public static ItemDetailsQueryFilter Create(ItemDetailsQuery itemDetailsQuery)
         {
-            var dateRangeRequest = new DateRangeRequest
-            {
-                StartDate = itemDetailsQuery.DateRange.StartDate.ToString("yyyy-MM-dd"),
-                EndDate = itemDetailsQuery.DateRange.EndDate.ToString("yyyy-MM-dd")
-            };
-
             return new ItemDetailsQueryFilter
             {
                 CarbonScopeList = itemDetailsQuery.CarbonScopeList.Select(scope => scope.ToString()).ToArray(),
                 CategoryType = itemDetailsQuery.CategoryType.ToString(),
-                DateRange = dateRangeRequest,
+                DateRange = new DateRangeRequest
+                {
+                    StartDate = itemDetailsQuery.DateRange.StartDate.ToString("yyyy-MM-dd"),
+                    EndDate = itemDetailsQuery.DateRange.EndDate.ToString("yyyy-MM-dd")
+                },
                 OrderBy = itemDetailsQuery.OrderBy.ToString(),
                 PageSize = 10,
                 ReportType = itemDetailsQuery.ReportType.ToString(),

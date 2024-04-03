@@ -12,6 +12,6 @@ namespace CarbonOptimization
         [JsonProperty("skipToken")]
         public string SkipToken { get; set; }
         [JsonProperty("value")]
-        CarbonEmissionItemDetailData[] Value { get; set; }
+        public CarbonEmissionItemDetailData[] Value { get; set; }
     }
 }
