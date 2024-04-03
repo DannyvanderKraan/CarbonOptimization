@@ -8,7 +8,7 @@
 
 	<PropertyGroup>
 		<PackageId>CostOptimization</PackageId>
-		<Version>1.0.0-alpha.1</Version>
+		<Version>1.0.0-alpha.2</Version>
 		<Authors>Danny van der Kraan</Authors>
 		<Company>Xebia</Company>
 		<Description>Client to interact with the Carbon Optimization API on Azure.</Description>
@@ -25,5 +25,8 @@
 		<PackageReference Include="Microsoft.Identity.Client" Version="4.59.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
-
+	
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
 </Project>
