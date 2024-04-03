@@ -7,7 +7,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<PackageId>Microsoft.Azure.CostOptimization</PackageId>
+		<PackageId>CostOptimization</PackageId>
 		<Version>1.0.0</Version>
 		<Authors>Danny van der Kraan</Authors>
 		<Company>Xebia</Company>

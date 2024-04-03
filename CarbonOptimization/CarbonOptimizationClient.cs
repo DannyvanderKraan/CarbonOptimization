@@ -2,9 +2,7 @@
 using Microsoft.Identity.Client;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
-using System.Runtime.InteropServices.Marshalling;
 using System.Text;
-using static System.Formats.Asn1.AsnWriter;
 
 namespace CarbonOptimization
 {

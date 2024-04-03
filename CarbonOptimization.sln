@@ -7,13 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarbonOptimization.ConsoleA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarbonOptimization", "CarbonOptimization\CarbonOptimization.csproj", "{F11643DD-9495-44CB-AAAD-F87E95F805D7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{512632E1-3D46-4B73-8CFE-AF13A53A691A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{8AB4C3BD-55D7-4D37-8717-08EB41357A34}"
-	ProjectSection(SolutionItems) = preProject
-		publish-nuget.yml = publish-nuget.yml
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,9 +24,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{8AB4C3BD-55D7-4D37-8717-08EB41357A34} = {512632E1-3D46-4B73-8CFE-AF13A53A691A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E07E27E6-6A3F-41B9-90ED-0FF112E26C6F}

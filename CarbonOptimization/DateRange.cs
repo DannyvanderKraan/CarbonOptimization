@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-using System.Runtime.InteropServices;
-
-namespace CarbonOptimization
+﻿namespace CarbonOptimization
 {
     public class DateRange
     {
