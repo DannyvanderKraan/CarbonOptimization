@@ -1,12 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
-namespace CarbonOptimization
+namespace CarbonOptimization;
+
+public class CarbonEmissionDataListResult
 {
-    public class CarbonEmissionDataListResult
-    {
-        [JsonProperty("skipToken")]
-        public string SkipToken { get; set; }
-        [JsonProperty("value")]
-        public CarbonEmissionItemDetailData[] Value { get; set; }
-    }
+    [JsonPropertyName("skipToken")]
+    public string SkipToken { get; set; } = string.Empty;
+
+    [JsonPropertyName("value")]
+    public CarbonEmissionItemDetailData[] Value { get; set; } = [];
 }

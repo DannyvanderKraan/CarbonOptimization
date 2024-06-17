@@ -1,17 +1,16 @@
-﻿namespace CarbonOptimization
-{
-    public class DateRange
-    {
-        public DateTimeOffset StartDate { get; set; }
-        public DateTimeOffset EndDate { get; set; }
+﻿namespace CarbonOptimization;
 
-        public static DateRange Create(DateRangeResponse dateRangeResponse)
+public class DateRange
+{
+    public DateTimeOffset StartDate { get; set; }
+    public DateTimeOffset EndDate { get; set; }
+
+    internal static DateRange Create(DateRangeResponse dateRangeResponse)
+    {
+        return new DateRange
         {
-            return new DateRange
-            {
-                StartDate = DateTimeOffset.Parse(dateRangeResponse.StartDate),
-                EndDate = DateTimeOffset.Parse(dateRangeResponse.EndDate)
-            };
-        }
+            StartDate = DateTimeOffset.Parse(dateRangeResponse.StartDate),
+            EndDate = DateTimeOffset.Parse(dateRangeResponse.EndDate)
+        };
     }
 }

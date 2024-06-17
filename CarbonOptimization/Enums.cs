@@ -1,44 +1,43 @@
-﻿namespace CarbonOptimization
+﻿namespace CarbonOptimization;
+
+public enum EmissionScopeEnum
 {
-    public enum EmissionScopeEnum
-    {
-        Scope1,
-        Scope2,
-        Scope3
-    }
+    Scope1,
+    Scope2,
+    Scope3
+}
 
-    public enum CategoryTypeEnum
-    {
-        Location,
-        Resource,
-        ResourceGroup,
-        ServiceType,
-        Subscription
-    }
+public enum CategoryTypeEnum
+{
+    Location,
+    Resource,
+    ResourceGroup,
+    ServiceType,
+    Subscription
+}
 
-    public enum SortDirectionEnum
-    {
-        Asc,
-        Desc
-    }
+public enum SortDirectionEnum
+{
+    Asc,
+    Desc
+}
 
-    public enum OrderByEnum
-    {
-        Name,
-        TotalCarbonEmission,
-        TotalCarbonEmissionLastMonth,
-        SubscriptionId
-    }
+public enum OrderByEnum
+{
+    Name,
+    TotalCarbonEmission,
+    TotalCarbonEmissionLastMonth,
+    SubscriptionId
+}
 
-    public enum ReportTypeEnum
-    {
-        ItemDetailReport,
-        OverallSummaryReport
-    }
+public enum ReportTypeEnum
+{
+    ItemDetailsReport,
+    OverallSummaryReport
+}
 
-    public enum GroupCategoryEnum
-    {
-        ResourceGroup,
-        SubscriptionId
-    }
+public enum GroupCategoryEnum
+{
+    ResourceGroup,
+    SubscriptionId
 }

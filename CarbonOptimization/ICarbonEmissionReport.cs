@@ -1,7 +1,6 @@
-﻿namespace CarbonOptimization
+﻿namespace CarbonOptimization;
+
+public interface ICarbonEmissionReport
 {
-    public interface ICarbonEmissionReport
-    {
-        public ReportTypeEnum ReportType { get; }
-    }
+    public ReportTypeEnum ReportType { get; }
 }
