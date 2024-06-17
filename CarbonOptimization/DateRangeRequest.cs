@@ -1,12 +1,12 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace CarbonOptimization
+namespace CarbonOptimization;
+
+internal class DateRangeRequest
 {
-    internal class DateRangeRequest
-    {
-        [JsonPropertyName("start")]
-        public string StartDate { get; set; }
-        [JsonPropertyName("end")]
-        public string EndDate { get; set; }
-    }
+    [JsonPropertyName("start")]
+    public string StartDate { get; set; } = string.Empty;
+
+    [JsonPropertyName("end")]
+    public string EndDate { get; set; } = string.Empty;
 }

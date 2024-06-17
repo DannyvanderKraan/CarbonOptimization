@@ -5,35 +5,35 @@ namespace CarbonOptimization;
 internal class ItemDetailsQueryFilter
 {
     [JsonPropertyName("carbonScopeList")]
-    public string[] CarbonScopeList { get; set; }
+    public string[] CarbonScopeList { get; set; } = [];
 
     [JsonPropertyName("categoryType")]
-    public string CategoryType { get; set; }
+    public string CategoryType { get; set; } = string.Empty;
 
     [JsonPropertyName("dateRange")]
-    public DateRangeRequest DateRange { get; set; }
+    public DateRangeRequest? DateRange { get; set; }
 
     [JsonPropertyName("groupCategory")]
-    public string GroupCategory { get; set; }
+    public string GroupCategory { get; set; } = string.Empty;
 
     [JsonPropertyName("orderBy")]
-    public string OrderBy { get; set; }
+    public string? OrderBy { get; set; }
 
     [JsonPropertyName("pageSize")]
     public int PageSize { get; set; }
 
     [JsonPropertyName("reportType")]
-    public string ReportType { get; set; }
+    public string ReportType { get; set; } = string.Empty;
 
     [JsonPropertyName("sortDirection")]
-    public string SortDirection { get; set; }
+    public string SortDirection { get; set; } = "Asc";
 
     [JsonPropertyName("subscriptionList")]
-    public string[] SubscriptionList { get; set; }
+    public string[] SubscriptionList { get; set; } = [];
 
     [JsonPropertyName("resourceGroupUrlList")]
-    public string[] ResourceGroupUrlList { get; set; }
+    public string[] ResourceGroupUrlList { get; set; } = [];
 
     [JsonPropertyName("skipToken")]
-    public string SkipToken { get; set; }
+    public string? SkipToken { get; set; }
 }

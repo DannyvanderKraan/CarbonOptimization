@@ -5,7 +5,8 @@ namespace CarbonOptimization;
 internal class DateRangeResponse
 {
     [JsonPropertyName("startDate")]
-    public string StartDate { get; set; }
+    public string StartDate { get; set; } = string.Empty;
+
     [JsonPropertyName("endDate")]
-    public string EndDate { get; set; }
+    public string EndDate { get; set; } = string.Empty;
 }

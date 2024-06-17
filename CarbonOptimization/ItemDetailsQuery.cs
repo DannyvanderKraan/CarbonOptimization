@@ -12,7 +12,7 @@ public class ItemDetailsQuery: ICarbonEmissionReport
     /// Developers need to specify which of these scopes they want to include in the emissions data retrieval, 
     /// ensuring the data reflects the specific environmental impact areas relevant to their analysis.
     /// </summary>
-    public EmissionScopeEnum[] CarbonScopeList { get; set; }
+    public EmissionScopeEnum[] CarbonScopeList { get; set; } = [];
 
     /// <summary>
     /// This property indicates the type of item categories to consider in the emissions data report. 
@@ -27,7 +27,7 @@ public class ItemDetailsQuery: ICarbonEmissionReport
     /// This allows developers to define a specific time frame for analysis, enabling the tracking of emissions over time, 
     /// identifying trends, and evaluating the effectiveness of carbon reduction strategies.
     /// </summary>
-    public DateRange DateRange { get; set; }
+    public DateRange DateRange { get; set; } = new();
 
     /// <summary>
     /// Determines the column name by which the returned items should be ordered. 
@@ -52,7 +52,11 @@ public class ItemDetailsQuery: ICarbonEmissionReport
     /// </summary>
     public ReportTypeEnum ReportType { get; set; } = ReportTypeEnum.ItemDetailsReport;
 
-    public string[] ResourceGroupUrlList { get; set; }
+    /// <summary>
+    /// Specifies the URL's of the resource groups for which carbon emissions data should be retrieved.
+    /// Must be in format: "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}"
+    /// </summary>
+    public string[] ResourceGroupUrlList { get; set; } = [];
 
     /// <summary>
     /// Specifies the direction of sorting for the query results, such as ascending or descending. This affects the order 
@@ -65,12 +69,12 @@ public class ItemDetailsQuery: ICarbonEmissionReport
     /// This allows filtering the data to include only specific Azure subscriptions, 
     /// making the analysis relevant to the selected cloud resources and services.
     /// </summary>
-    public string[] SubscriptionList { get; set; }
+    public string[] SubscriptionList { get; set; } = [];
     /// <summary>
     /// This is used for pagination; it specifies the number of result items to skip. 
     /// This is particularly useful when dealing with large datasets, as it allows developers to navigate 
     /// through the results incrementally, retrieving manageable chunks of data at a time.
     /// </summary>
     [JsonPropertyName("skipToken")]
-    public string SkipToken { get; set; }
+    public string SkipToken { get; set; } = string.Empty;
 }

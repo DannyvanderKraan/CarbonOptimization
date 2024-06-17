@@ -5,28 +5,28 @@ namespace CarbonOptimization;
 public class CarbonEmissionItemDetailData
 {
     [JsonPropertyName("dataType")]
-    public string DataType { get; set; }
+    public string DataType { get; set; } = string.Empty;
 
     [JsonPropertyName("itemName")]
-    public string ItemName { get; set; }
+    public string ItemName { get; set; } = string.Empty;
 
     [JsonPropertyName("categoryType")]
-    public string CategoryType { get; set; }
+    public string CategoryType { get; set; } = string.Empty;
 
     [JsonPropertyName("groupName")]
-    public string GroupName { get; set; }
+    public string GroupName { get; set; } = string.Empty;
 
     [JsonPropertyName("subscriptionId")]
-    public string SubscriptionId { get; set; }
+    public string SubscriptionId { get; set; } = string.Empty;
 
     [JsonPropertyName("resourceGroup")]
-    public string ResourceGroup { get; set; }
+    public string ResourceGroup { get; set; } = string.Empty;
 
     [JsonPropertyName("resourceId")]
-    public string ResourceId { get; set; }
+    public string ResourceId { get; set; } = string.Empty;
 
     [JsonPropertyName("resourceType")]
-    public string ResourceType { get; set; }
+    public string ResourceType { get; set; } = string.Empty;
 
     [JsonPropertyName("totalCarbonEmission")]
     public double TotalCarbonEmission { get; set; }
