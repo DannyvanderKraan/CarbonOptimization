@@ -1,49 +1,48 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
-namespace CarbonOptimization
+namespace CarbonOptimization;
+
+public class CarbonEmissionItemDetailData
 {
-    public class CarbonEmissionItemDetailData
-    {
-        [JsonProperty("dataType")]
-        public string DataType { get; set; }
+    [JsonPropertyName("dataType")]
+    public string DataType { get; set; }
 
-        [JsonProperty("itemName")]
-        public string ItemName { get; set; }
+    [JsonPropertyName("itemName")]
+    public string ItemName { get; set; }
 
-        [JsonProperty("categoryType")]
-        public string CategoryType { get; set; }
+    [JsonPropertyName("categoryType")]
+    public string CategoryType { get; set; }
 
-        [JsonProperty("groupName")]
-        public string GroupName { get; set; }
+    [JsonPropertyName("groupName")]
+    public string GroupName { get; set; }
 
-        [JsonProperty("subscriptionId")]
-        public string SubscriptionId { get; set; }
+    [JsonPropertyName("subscriptionId")]
+    public string SubscriptionId { get; set; }
 
-        [JsonProperty("resourceGroup")]
-        public string ResourceGroup { get; set; }
+    [JsonPropertyName("resourceGroup")]
+    public string ResourceGroup { get; set; }
 
-        [JsonProperty("resourceId")]
-        public string ResourceId { get; set; }
+    [JsonPropertyName("resourceId")]
+    public string ResourceId { get; set; }
 
-        [JsonProperty("resourceType")]
-        public string ResourceType { get; set; }
+    [JsonPropertyName("resourceType")]
+    public string ResourceType { get; set; }
 
-        [JsonProperty("totalCarbonEmission")]
-        public double TotalCarbonEmission { get; set; }
+    [JsonPropertyName("totalCarbonEmission")]
+    public double TotalCarbonEmission { get; set; }
 
-        [JsonProperty("totalCarbonEmission12MonthsAgo")]
-        public double TotalCarbonEmission12MonthsAgo { get; set; }
+    [JsonPropertyName("totalCarbonEmission12MonthsAgo")]
+    public double TotalCarbonEmission12MonthsAgo { get; set; }
 
-        [JsonProperty("totalCarbonEmissionLastMonth")]
-        public double TotalCarbonEmissionLastMonth { get; set; }
+    [JsonPropertyName("totalCarbonEmissionLastMonth")]
+    public double TotalCarbonEmissionLastMonth { get; set; }
 
-        [JsonProperty("changeRatioFor12Months")]
-        public double ChangeRatioFor12Months { get; set; }
+    [JsonPropertyName("changeRatioFor12Months")]
+    public double ChangeRatioFor12Months { get; set; }
 
-        [JsonProperty("changeRatioForLastMonth")]
-        public double ChangeRatioForLastMonth { get; set; }
+    [JsonPropertyName("changeRatioForLastMonth")]
+    public double ChangeRatioForLastMonth { get; set; }
 
-        [JsonProperty("changeValueMonthOverMonth")]
-        public double ChangeValueMonthOverMonth { get; set; }
-    }
+    [JsonPropertyName("changeValueMonthOverMonth")]
+    public double ChangeValueMonthOverMonth { get; set; }
 }

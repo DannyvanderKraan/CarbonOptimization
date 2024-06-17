@@ -1,12 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
-namespace CarbonOptimization
+namespace CarbonOptimization;
+
+internal class DateRangeResponse
 {
-    public class DateRangeResponse
-    {
-        [JsonProperty("startDate")]
-        public string StartDate { get; set; }
-        [JsonProperty("endDate")]
-        public string EndDate { get; set; }
-    }
+    [JsonPropertyName("startDate")]
+    public string StartDate { get; set; }
+    [JsonPropertyName("endDate")]
+    public string EndDate { get; set; }
 }

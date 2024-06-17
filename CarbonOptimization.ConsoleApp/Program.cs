@@ -1,31 +1,38 @@
-﻿using CarbonOptimization;
+﻿using Azure.Identity;
+using CarbonOptimization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
-// Set up configuration sources.
-var configuration = new ConfigurationBuilder()
-    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-    .AddJsonFile("appsettings.json", true)
-    .AddUserSecrets<Program>()
-    .Build();
-
 // Set up services.
 var services = new ServiceCollection();
-services.Configure<CarbonOptimizationClientOptions>(configuration.GetSection("CarbonOptimizationClient"));
-services.AddSingleton<CarbonOptimizationClient>();
+services.AddHttpClient();
+
+// Set up configuration sources.
+//var configuration = new ConfigurationBuilder()
+//    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+//    .AddJsonFile("appsettings.json", true)
+//    .AddUserSecrets<Program>()
+//    .Build();
+//services.Configure<CarbonOptimizationClientOptions>(configuration.GetSection("CarbonOptimizationClient"));
+
+// or:
+
+services.AddSingleton(Options.Create(new CarbonOptimizationClientOptions { TenantId = "", Scopes = [""] }));
+
+services.AddSingleton(p => CarbonOptimizationClient.WithTokenCredential(new DefaultAzureCredential(), p.GetRequiredService<IOptions<CarbonOptimizationClientOptions>>(), p.GetRequiredService<IHttpClientFactory>()));
 
 // Build the service provider.
 var serviceProvider = services.BuildServiceProvider();
 
 // Use the service.
-var client = serviceProvider.GetService<CarbonOptimizationClient>();
+var client = serviceProvider.GetRequiredService<CarbonOptimizationClient>();
 
 var dateRange = await client.GetCarbonEmissionDataAvailableDateRange();
 
 Console.WriteLine($"Carbon emission data is available from {dateRange?.StartDate} to {dateRange?.EndDate}.");
 
-var subscriptions = serviceProvider.GetService<IOptions<CarbonOptimizationClientOptions>>().Value.Scopes;
+var subscriptions = serviceProvider.GetRequiredService<IOptions<CarbonOptimizationClientOptions>>().Value.Scopes;
 
 ItemDetailsQuery itemDetailsQuery = new ItemDetailsQuery
 {
@@ -43,7 +50,7 @@ ItemDetailsQuery itemDetailsQuery = new ItemDetailsQuery
     SubscriptionList = subscriptions,
 };
 
-var carbonEmissionDataListResult = await client.GetCarbonEmissionReports(itemDetailsQuery);
+var carbonEmissionDataListResult = await client.GetCarbonEmissionReports(itemDetailsQuery, CancellationToken.None);
 foreach (var carbonEmissionData in carbonEmissionDataListResult?.Value)
 {
     Console.WriteLine($"Item: {carbonEmissionData.ItemName}, Emission: {carbonEmissionData.TotalCarbonEmission}");
