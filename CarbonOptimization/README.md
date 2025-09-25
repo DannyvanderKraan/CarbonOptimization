@@ -6,13 +6,17 @@ This is a client library to interact with the Carbon Optimization API on Azure. 
 
 You can install the package from NuGet:
 
+```
 dotnet add package CarbonOptimization
+```
 
 ## Usage
 
 Here's an example on how to use the `CarbonOptimizationClient`:
 
-var client = new CarbonOptimizationClient(options); var dateRange = await client.GetCarbonEmissionDataAvailableDateRange();
+```csharp
+var client = new CarbonOptimizationClient(options); var dateRange = await client.GetCarbonEmissionDataAvailableDateRange(CancellationToken.None);
+```
 
 ## Features
 
@@ -26,4 +30,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License.
-
